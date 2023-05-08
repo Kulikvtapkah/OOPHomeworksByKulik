@@ -1,7 +1,6 @@
 package OOPHomeworksByKulik.Homework2;
 
 import java.util.Arrays;
-import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
@@ -91,15 +90,15 @@ public class OOPHmw2_1 {
         Scanner animalScanner = new Scanner(System.in);
 
         Zoo uenoZoo = new Zoo();
-        // uenoZoo.addNewAnimal(new Cat("barsik", "siamese", "black", "01.12.2020", 20,
-        //         5.5, "blue", false, true));
+        uenoZoo.addNewAnimal(new Cat("barsik", "siamese", "black", "01.12.2020", 20,
+                5.5, "blue", false, true));
 
-        // uenoZoo.addNewAnimals(
-        //         Arrays.asList(new Dog("Hachiko", "akita-inu", "brown", "01.12.2020", 30, 7.8, "green", false, false),
-        //                 new Tiger("savanna", "01.01.20", 100, 200, "yellow"),
-        //                 new Wolf("forest", "18.05.2009", 35, 80, "silver", true),
-        //                 new Chicken(20, 3, "black", 1),
-        //                 new Stork(70, 25, "black", 5000)));
+        uenoZoo.addNewAnimals(
+                Arrays.asList(new Dog("Hachiko", "akita-inu", "brown", "01.12.2020", 30, 7.8, "green", false, false),
+                        new Tiger("savanna", "01.01.20", 100, 200, "yellow"),
+                        new Wolf("forest", "18.05.2009", 35, 80, "silver", true),
+                        new Chicken(20, 3, "black", 1),
+                        new Stork(70, 25, "black", 5000)));
 
         uenoZoo.printZooAllAnimalsInfo();
         consoleMenu(animalScanner, uenoZoo);

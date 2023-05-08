@@ -1,6 +1,5 @@
 package OOPHomeworksByKulik.Homework2;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedList;
 
@@ -32,7 +31,7 @@ public class Zoo {
         if (animalNumberIsOK(animalNumber)) {
             String freeAnimal = animalType(animalNumber);
             zooAnimals.remove(animalNumber - 1);
-            System.out.printf("%s теперь живет в естественной среде!\n", freeAnimal );
+            System.out.printf("%s теперь живет в естественной среде!\n", freeAnimal);
         }
     }
 
