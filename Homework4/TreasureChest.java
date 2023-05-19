@@ -1,9 +1,7 @@
 package OOPHomeworksByKulik.Homework4;
 
 import java.util.Arrays;
-
 import java.util.Comparator;
-
 import java.util.LinkedList;
 
 // Реализовать класс для работы с одномерными динамическими массивами произвольных данных(произвольного типа). 
@@ -67,6 +65,7 @@ public class TreasureChest<T> {
         if (inChestSize(index)) {
             this.chest.remove(index);
             this.chestSize--;
+
         }
     }
 
@@ -80,9 +79,9 @@ public class TreasureChest<T> {
 
     // 3. Удаление всех элементов с заданным значением
     public void removeTreasures(T treasureToRemove) {
-        for (T treasure : this.chest) {
-            if (treasure.equals(treasureToRemove)) {
-                this.chest.remove(treasure);
+        for (int index = chestSize - 1; index >= 0; index--) {
+            if (getTreasure(index).equals(treasureToRemove)) {
+                this.chest.remove(getTreasure(index));
                 this.chestSize--;
             }
         }
@@ -187,25 +186,51 @@ public class TreasureChest<T> {
         setTreasure(i1, temp);
     }
 
-    // // 6. Поиск суммы элементов массива
-    // public Double multiplyTreasures() {
+    // 6. Поиск суммы элементов массива
+    // бред какой-то получился(
+    public T treasureSum() {
+        if (!chestIsEmpty()) {
+            if (getTreasure(0) instanceof String) {
+                String stringSum = "";
+                for (T treasure : chest) {
+                    stringSum += (String) treasure;
+                }
+                return (T) stringSum;
+            } else if (getTreasure(0) instanceof Double) {
+                Double doubleSum = 0D;
+                for (T treasure : chest) {
+                    doubleSum += ((Number) treasure).doubleValue();
+                }
+                return (T) doubleSum;
+            } else if (getTreasure(0) instanceof Float) {
+                Float floatSum = 0F;
+                for (T treasure : chest) {
+                    floatSum += ((Number) treasure).floatValue();
+                }
+                return (T) floatSum;
+            } else if (getTreasure(0) instanceof Integer) {
+                Integer intSum = 0;
+                for (T treasure : chest) {
+                    intSum += ((Number) treasure).intValue();
+                }
+                return (T) intSum;
+            } else if (getTreasure(0) instanceof Long) {
+                Long longSum = 0L;
+                for (T treasure : chest) {
+                    longSum += ((Number) treasure).longValue();
+                }
+                return (T)longSum;
+            }
+            else {
+                System.out.println("Что-то пошло не так...Невозможно выполнить операцию");
+                return null;
+            }
+        } else
+            return null;
+    }
 
-    //     if (!chestIsEmpty()) {
-    //         try {
-    //             Double multiplication = ((Number) getTreasure(0)).doubleValue();
-    //             for (int i = 1; i < chestSize; i++) {
-    //                 multiplication *= ((Number) getTreasure(i)).doubleValue();
-    //             }
-    //             return multiplication;
-    //         } catch (Exception e) {
-    //             System.out.println("Что-то пошло не так...Невозможно выполнить операцию");
-    //             return null;
-    //         }
-    //     } else
-    //         return null;
-    // }
     // 7. Поиск произведения элементов массива
-    public T multiplyTreasures() {
+    public Double multiplyTreasures() {
 
         if (!chestIsEmpty()) {
             try {
@@ -213,7 +238,7 @@ public class TreasureChest<T> {
                 for (int i = 1; i < chestSize; i++) {
                     multiplication *= ((Number) getTreasure(i)).doubleValue();
                 }
-                return (T) multiplication;
+                return multiplication;
             } catch (Exception e) {
                 System.out.println("Что-то пошло не так...Невозможно выполнить операцию");
                 return null;
@@ -221,34 +246,6 @@ public class TreasureChest<T> {
         } else
             return null;
     }
-// private <N extends Integer & Double> N mul (LinkedList<? extends Integer & Double>  list, int i, int j){
-//     return list.get(i)*list.get(j);
-// }
-
-//     public <N extends Integer, Double> N multiplyTreasures() {
-
-//         if (!chestIsEmpty()) {
-//             try {
-//                 N multiplication = (N) getTreasure(0);
-//                 N multiplication2 = (N) getTreasure(1);
-//                 multiplication+=multiplication2;
-
-
-
-
-//                 for (int i = 1; i < chestSize; i++) {
-//                     multiplication *= ((Number) getTreasure(i)).doubleValue();
-//                 }
-//                 return multiplication;
-//             } catch (Exception e) {
-//                 System.out.println("Что-то пошло не так...Невозможно выполнить операцию");
-//                 return null;
-//             }
-//         } else
-//             return null;
-//     }
-
-
 
     private boolean chestIsEmpty() {
         if (chestSize > 0)
@@ -263,8 +260,11 @@ public class TreasureChest<T> {
     public void showTreasures() {
         if (!chestIsEmpty()) {
             System.out.printf("Сейчас в коллекции %s элементов:\n", chestSize);
+            for (int i = 0; i < chestSize; i++) {
+                System.out.println(getTreasure(i));
+            }
             for (T treasure : this.chest) {
-                System.out.println(treasure);
+                System.out.println(treasure.toString());
             }
         }
     }
