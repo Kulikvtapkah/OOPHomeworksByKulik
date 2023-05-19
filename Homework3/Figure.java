@@ -21,7 +21,6 @@ package OOPHomeworksByKulik.Homework3;
 
 public abstract class Figure implements Comparable<Figure> {
     protected double area;
-    protected boolean geometryIsValid;
 
     protected Figure() {
 
