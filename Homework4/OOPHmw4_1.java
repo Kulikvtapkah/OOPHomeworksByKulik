@@ -46,7 +46,7 @@ public class OOPHmw4_1 {
         artChest.addTreasure(0, new Masterpiece("Водяные змеи II", "Густав Климт", 222));
         artChest.addTreasure(2, new Masterpiece("Крик", "Эвард Мунк", 120));
         artChest.showTreasures();
-        System.out.printf("\nСамая дорогая: %s", artChest.largestTreasure(Comparator.naturalOrder()));
+        System.out.printf("\nСамая дорогая в коллекции: %s", artChest.largestTreasure(Comparator.naturalOrder()));
         System.out.printf("\nСамая дешевая в коллекции: %s", artChest.smallestTreasure(Comparator.naturalOrder()));
 
     }
