@@ -10,5 +10,6 @@ public interface View {
     int getID();
 
     void showNote(Note note);
+
     void userInfo(String message);
 }
