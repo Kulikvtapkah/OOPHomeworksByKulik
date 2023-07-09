@@ -1,5 +1,7 @@
 package OOPHomeworksByKulik.Homework3;
 
+import TestWork2.Models.InvalidLotParametersExeption;
+
 // Написать программу на языках Java, в которой идёт со следующими геометрическими фигурами:
 // 1.Треугольник
 // 2.Квадрат

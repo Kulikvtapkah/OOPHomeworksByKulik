@@ -3,6 +3,8 @@ package OOPHomeworksByKulik.Homework3;
 import java.util.LinkedList;
 import java.util.List;
 
+import OOPHomeworksByKulik.Homework3.InvalidGeometryExeption;
+
 public abstract class Polygon extends Figure {
 
     protected double perimeter;

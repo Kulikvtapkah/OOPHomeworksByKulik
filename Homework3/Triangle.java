@@ -8,7 +8,7 @@ public class Triangle extends Polygon {
     protected double sideBC;
     protected double sideCA;
 
-    protected Triangle(double sideAB, double sideBC, double sideCA) throws InvalidGeometryExeption {
+    protected Triangle(double sideAB, double sideBC, double sideCA) throws InvalidLotParametersExeption {
         super(Arrays.asList(sideAB, sideBC, sideCA));
         this.sideAB = sideAB;
         this.sideCA = sideCA;
@@ -31,11 +31,11 @@ public class Triangle extends Polygon {
         super.figureInfo();
     }
 
-    protected void triangleValidation(double sideAB, double sideBC, double sideCA) throws InvalidGeometryExeption {
+    protected void triangleValidation(double sideAB, double sideBC, double sideCA) throws InvalidLotParametersExeption {
 
         try {
             if (sideAB + sideBC <= sideCA || sideAB + sideCA <= sideBC || sideCA + sideBC <= sideAB)
-                throw new InvalidGeometryExeption(" сторона треугольника не может быть длиннее двух других");
+                throw new InvalidLotParametersExeption(" сторона треугольника не может быть длиннее двух других");
         } finally {
         }
 

@@ -25,7 +25,7 @@ public class OOPHmw3_1 {
     // и в случае ошибки выдавать соответствующие сообщения. Перодумать собственную
     // иерархию исключений
 
-    public static void main(String[] args) throws InvalidGeometryExeption {
+    public static void main(String[] args) throws InvalidLotParametersExeption {
         // Scanner animalScanner = new Scanner(System.in);
 
         FigureArray figureCollection = new FigureArray();

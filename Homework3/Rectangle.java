@@ -7,7 +7,7 @@ public class Rectangle extends Polygon {
     protected double hight;
     protected double width;
 
-    public Rectangle(double hight, double width) throws InvalidGeometryExeption {
+    public Rectangle(double hight, double width) throws InvalidLotParametersExeption {
         super(Arrays.asList(hight, hight, width, width));
         this.hight = hight;
         this.width = width;
